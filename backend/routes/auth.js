@@ -1,9 +1,11 @@
 const express = require('express');
 const User = require('../models/User');
+const fetchuser = require('../middleware/fetchuser');
 const bcrypt = require('bcrypt');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
+
 
 const JWT_SECRET = 'Altamashgoodb$oiii';
 
@@ -88,8 +90,18 @@ router.post('/login', [
     }
 })
 
-//ROUTE 2 Authenticate user using  "/api/auth/createuser". No login required
+//ROUTE 3 Get logged in user details using  "/api/auth/getuser. login required
+router.post('/getuser', fetchuser, async (req, res) => {
 
+    try {
+        userId = req.user.id;
+        const user = await User.findById(userId).select("-password")
+        res.send(user)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 module.exports = router
 
