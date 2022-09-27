@@ -9,10 +9,10 @@ const NoteState = (props) => {
     const [state, setState] = useState(s1)
     const update=()=>{
         setTimeout(() => {
-            setState={
+            setState({
                 "name":"Sonu",
                 "Gym": "Planet Fitness"
-            }
+            })
         }, 1000);
     }
 
