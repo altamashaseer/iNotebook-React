@@ -71,7 +71,7 @@ function Notes() {
                             <button onClick={handleClick} disabled={note.etitle.length <5 || note.edescription.length <5 } type="button" className="btn btn-primary">Update Note</button>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
             <div className="row my-3">
                 <h2>Your Notes</h2>

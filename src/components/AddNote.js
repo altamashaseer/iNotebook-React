@@ -7,8 +7,8 @@ function AddNote() {
 
     const [note, setNote] = useState({ title: "", description: "", tag: "" })
 
-    const handleClick = (e) => {
-        e.preventDefault(); //prevent page from reload
+    const handleClick = (e) => {  
+        e.preventDefault(); //prevent page from reload  
         addNote(note.title, note.description, note.tag);
         setNote({title: "", description: "", tag: ""})
     }
