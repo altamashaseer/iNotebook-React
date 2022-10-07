@@ -11,7 +11,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('localhost:5000/api/auth/login', {
+        const response = await fetch('http://localhost:5000/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,6 +22,7 @@ const Login = () => {
         if (json.success) {
             //redirect and save auth token
             localStorage.setItem('token', json.authtoken)
+            console.log(json.authtoken);
             navigate("/")
         }
         else {
@@ -38,12 +39,12 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" onChange={onChange} id="email" name='email' aria-describedby="emailHelp" />
+                    <input type="email" className="form-control" onChange={onChange} value={credentials.email} id="email" name='email' aria-describedby="emailHelp" />
                     <div id="emailHelp" className="form-text" >We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" onChange={onChange} id="password" />
+                    <input type="password" className="form-control" onChange={onChange} value={credentials.password} name="password" id="password" />
                 </div>
                 <button type="submit" className="btn btn-primary" >Submit</button>
             </form>
