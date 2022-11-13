@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
+import Background from './Background';
 
 const Signup = (props) => {
 
@@ -35,28 +36,30 @@ const Signup = (props) => {
   }
 
   return (
-    <div className='container'>
-          <h2 className='mb-4 text-center' >Create a new account</h2>
+    <div className='signup-container'>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+          <h2 className='mb-4 text-center' >Create a new account</h2>
+          
+        <div className="mb-3 input-box">
           <label htmlFor="name" className="form-label">Username</label>
           <input type="text" className="form-control" onChange={onChange} id="name" name='name' aria-describedby="emailHelp" />
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
+        <div className="mb-3 input-box">
+          <label htmlFor="email" className="form-label">Email</label>
           <input type="email" className="form-control" onChange={onChange} id="email" name='email' aria-describedby="emailHelp" />
-          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" className="form-text">We never share your details with anyone.</div>
         </div>
-        <div className="mb-3">
+        <div className="mb-3 input-box">
           <label htmlFor="password" className="form-label">Password</label>
           <input type="password" className="form-control" onChange={onChange} name='password' required minLength={5} id="password" />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 input-box">
           <label htmlFor="cpassword" className="form-label">Confirm Password</label>
           <input type="password" className="form-control" onChange={onChange} name='cpassword' required minLength={5} id="cpassword" />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-dark mt-3">Sign Up</button>
       </form>
+      <Background/>
     </div>
   )
 }

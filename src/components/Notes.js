@@ -76,13 +76,15 @@ function Notes(props) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onClick={handleClick} disabled={note.etitle.length < 5 || note.edescription.length < 5} type="button" className="btn btn-primary">Update Note</button>
+                            <button onClick={handleClick} disabled={note.etitle.length < 5 || note.edescription.length < 5} type="button" className="btn btn-dark">Update Note</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="row my-3">
-                <h2>Your Notes</h2>
+
+            
+            <div className="row card" id='user-notes'>
+                <h2 className='text-center my-3'>Your Notes <i class="fa-solid fa-cloud"></i></h2>
                 {notes.map((element) => {
                     return <NoteItem key={element._id} note={element} showAlert={showAlert} updateNote={updateNote} />
                 })}

@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 const NoteState = (props) => {
   const host = "http://localhost:5000"
   const notesInitial = []
-
   const [notes, setNotes] = useState(notesInitial)
 
   //Get all Notes for Auth-token
@@ -37,7 +36,7 @@ const NoteState = (props) => {
     });
     const note = await response.json();
     //Client
-      setNotes(notes.concat(note))
+    setNotes(notes.concat(note))
   }
 
   // Delete a note
@@ -51,7 +50,7 @@ const NoteState = (props) => {
         'auth-token': localStorage.getItem('token')
       },
     });
-    const newNotes=notes.filter((note)=>{return note._id!==id})
+    const newNotes = notes.filter((note) => { return note._id !== id })
     setNotes(newNotes)
   }
 
@@ -70,7 +69,7 @@ const NoteState = (props) => {
     // const json = response.json();
 
     //client side
-    let newNotes= JSON.parse(JSON.stringify(notes))
+    let newNotes = JSON.parse(JSON.stringify(notes))
     for (let index = 0; index < newNotes.length; index++) {
       if (newNotes[index]._id === id) {
         newNotes[index].title = title
