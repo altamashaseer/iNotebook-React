@@ -1,7 +1,9 @@
+:root {
+  --black: #1e1e1f;
+}
+
 body {
   margin: 0;
-  /* background: #232425; */
-  /* color: #fff; */
 }
 
 i {
@@ -51,8 +53,28 @@ i {
   width: 100% !important;
 }
 
-/* NOTES  */
+/* ADD NOTE and USER NOTES */
+#add-note,
 #user-notes {
-  margin: 3rem 0;
-  padding: 1rem;
+  margin: 0 0 5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(255, 255, 255, 0.39);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#user-notes h2,
+#add-note h2{
+  margin-bottom: 3rem !important;
+}
+
+/* NOTEITEM */
+
+/* background  */
+.back {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background: url('../src/media/background.png');
 }

@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
-import AddNote from './AddNote';
-import NoteItem from './NoteItem';
 import { useNavigate } from 'react-router-dom'
+import NoteItem from './NoteItem';
 
-
-function Notes(props) {
+const MyNotes = (props) => {
     const context = useContext(noteContext)
     const { notes, getNotes, editNote } = context;
     const { showAlert } = props;
@@ -16,7 +14,7 @@ function Notes(props) {
             getNotes()
         }
         else {
-          navigate('/login')  
+            navigate('/login')
         }
     }, [])
 
@@ -43,9 +41,8 @@ function Notes(props) {
     }
 
     return (
-        <>
-            <AddNote showAlert={showAlert} />
-
+        <div>
+            <div className='back'></div>
             {/* Update notes  */}
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
@@ -82,15 +79,15 @@ function Notes(props) {
                 </div>
             </div>
 
-            
-            <div className="row card" id='user-notes'>
-                <h2 className='text-center my-3'>Your Notes <i class="fa-solid fa-cloud"></i></h2>
+
+            <div className="row container" id='user-notes'>
+                <h2 className='text-center'>Your Notes <i class="fa-solid fa-cloud"></i></h2>
                 {notes.map((element) => {
                     return <NoteItem key={element._id} note={element} showAlert={showAlert} updateNote={updateNote} />
                 })}
             </div>
-        </>
+        </div>
     )
 }
 
-export default Notes
+export default MyNotes
