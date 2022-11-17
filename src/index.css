@@ -2,6 +2,10 @@
   --black: #1e1e1f;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -13,6 +17,10 @@ i {
 /* NAVBAR  */
 #navbar {
   background-color: #000000 !important;
+}
+
+.nav-item {
+  margin: 0 .5rem;
 }
 
 .navbar-brand img {
@@ -42,7 +50,7 @@ i {
   width: 40%;
   border: 0;
   outline: none;
-  padding: 2rem 1.5rem 2.5rem 1.5rem;
+  padding: 2rem 1.5rem 2.3rem 1.5rem;
   border-radius: 6px;
 }
 
@@ -51,6 +59,9 @@ i {
 .login-container button,
 .signup-container button {
   width: 100% !important;
+}
+.login-container p{
+  margin: .7rem 0 0 0;
 }
 
 /* ADD NOTE and USER NOTES */
@@ -61,12 +72,12 @@ i {
   background: rgba(255, 255, 255, 0.39);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-#user-notes h2,
-#add-note h2{
-  margin-bottom: 3rem !important;
-}
 
-/* NOTEITEM */
+#user-notes h2,
+#add-note h2 {
+  margin-bottom: 3rem !important;
+  font-size: 2.3rem;
+}
 
 /* background  */
 .back {
@@ -77,4 +88,17 @@ i {
   left: 0;
   z-index: -10;
   background: url('../src/media/background.png');
+}
+
+@media screen and (max-width:1000px) {
+
+  .login-container form,
+  .signup-container form {
+    width: 80%;
+  }
+
+  .login-container,
+  .signup-container {
+    height: 100%;
+  }
 }
