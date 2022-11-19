@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
     </section>
     <footer>
-        <p>NewsJunky &copy; 2022 | All Rights Reserved</p>
+        <p>iNotebook &copy; 2022 | All Rights Reserved</p>
     </footer>
     </div>
   )

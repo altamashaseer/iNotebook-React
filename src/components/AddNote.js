@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom'
 
 function AddNote(props) {
     const context = useContext(noteContext)
-    const { addNote, getNotes} = context;
+    const { addNote } = context;
     const navigate = useNavigate();
 
     const [note, setNote] = useState({ title: "", description: "", tag: "" })
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
-            
+
             navigate('/login')
         }
     }, [])
@@ -40,7 +40,6 @@ function AddNote(props) {
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label"><b>Description</b></label>
                     <textarea type="Text" className="form-control" id="description" name='description' value={note.description} minLength={5} required onChange={onChange} cols="30" rows="5"></textarea>
-                    {/* <input type="Text" className="form-control" id="description" name='description' value={note.description} minLength={5} required onChange={onChange} /> */}
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label"><b>Tag</b></label>

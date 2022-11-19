@@ -4,8 +4,10 @@ a:active {
     text-decoration: none;
     outline: none;
 }
+
 .about-section {
-    margin: 0.5rem 0 2rem 0;
+    margin: 0.5rem 0 5rem 0;
+    height: 100%;
     padding: 0;
     background: transparent !important;
 }
@@ -15,7 +17,8 @@ a:active {
     flex-direction: row;
 }
 
-.image-column, .content-column {
+.image-column,
+.content-column {
     max-width: 50%;
     height: fit-content;
 }
@@ -35,7 +38,6 @@ a:active {
 
 .sec-title h2 {
     position: relative;
-    /* display: block; */
     font-size: 40px;
     line-height: 1.28em;
     font-weight: 700;
@@ -52,9 +54,6 @@ a:active {
     height: 3px;
     background-color: var(--black);
 }
-
-
-
 
 .about-section .btn-box a {
     padding: 15px 40px;
@@ -85,15 +84,19 @@ a:active {
         margin-bottom: 6rem !important;
     }
 
-    .image-column, .content-column {
+    .image-column,
+    .content-column {
         max-width: 90%;
     }
-    .content-column, .sec-title{
+
+    .content-column,
+    .sec-title {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    h2{
+
+    h2 {
         font-size: 1.9rem !important;
     }
 }
