@@ -13,7 +13,7 @@ const Navbar = () => {
     let location = useLocation(); //for active class
 
     React.useEffect(() => {
-        console.log(location.pathname);
+        // console.log(location.pathname);
     }, [location]);
     return (    
         <nav className="navbar  navbar-dark navbar-expand-lg bg-dark" id='navbar'>

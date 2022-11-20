@@ -22,9 +22,9 @@ const Signup = (props) => {
     if (json.success) {
       //redirect and save auth token
       localStorage.setItem('token', json.authtoken)
-      console.log(json.authtoken);
+      // console.log(json.authtoken);
       navigate("/")
-      props.showAlert('Yayy! Account created successfully', 'success')
+      props.showAlert('Account created successfully', 'success')
     }
     else {
       props.showAlert('Invalid Credentials', 'danger')
@@ -39,7 +39,6 @@ const Signup = (props) => {
     <div className='signup-container'>
       <form onSubmit={handleSubmit}>
           <h2 className='mb-4 text-center' >Create a new account</h2>
-          
         <div className="mb-3 input-box">
           <label htmlFor="name" className="form-label">Username</label>
           <input type="text" className="form-control" onChange={onChange} id="name" name='name' aria-describedby="emailHelp" />

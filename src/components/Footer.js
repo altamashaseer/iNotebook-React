@@ -13,7 +13,6 @@ const Footer = () => {
                         <a href="/"><img src={logo} alt="logo"/></a>
                         <p>Write notes, save ideas & keep up with your to-do list with iNotebook!</p>
                         <div class="hr"></div>
-                        <h6></h6>
                         <h6><i class="fa-solid fa-location-pin"></i>  Delhi, India <span>|</span> <i class="fa-solid fa-phone"></i> +91-9997340479</h6>
                         <div class="contact-social">
                             <ul>
