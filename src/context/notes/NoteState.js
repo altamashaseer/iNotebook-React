@@ -2,7 +2,8 @@ import NoteContext from './noteContext'
 import React, { useState } from 'react'
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000"
+  // const host = "http://localhost:5000"
+  const host = "https://puzzled-bull-stockings.cyclic.app"
   const notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
 
@@ -43,6 +44,7 @@ const NoteState = (props) => {
   const deleteNote = async (id) => {
     // API Call
     const url = `${host}/api/notes/deletenote/${id}`
+    // eslint-disable-next-line
     const response = await fetch(url, {
       method: 'DELETE',
       headers: {
@@ -58,6 +60,7 @@ const NoteState = (props) => {
   const editNote = async (id, title, description, tag) => {
     //API call
     const url = `${host}/api/notes/updatenote/${id}`
+    // eslint-disable-next-line
     const response = await fetch(url, {
       method: 'PUT',
       headers: {

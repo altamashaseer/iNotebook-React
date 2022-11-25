@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import Background from './Background';
 
 const Login = (props) => {
+    const host="https://puzzled-bull-stockings.cyclic.app"
 
     const [credentials, setCredentials] = useState({ email: '', password: '' })
     // let history = useHistory();
@@ -11,7 +12,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ const Login = (props) => {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input type="password" className="form-control" onChange={onChange} value={credentials.password} name="password" id="password" />
                 </div>
-                <button type="submit" className="btn btn-dark mt-3" >Login <i class="fa-solid fa-right-to-bracket"></i></button>
+                <button type="submit" className="btn btn-dark mt-3" >Login <i className="fa-solid fa-right-to-bracket"></i></button>
                 <p>Don't have an account? <Link to='/signup'> Sign up</Link></p>
             </form>
             <Background/>

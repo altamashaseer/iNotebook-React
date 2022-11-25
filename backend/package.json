@@ -4,6 +4,7 @@
   "description": "iNotebook - Your notebook on cloud",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Altamash",
@@ -14,6 +15,7 @@
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.12.1",
     "mongoose": "^6.6.1"
   },
   "devDependencies": {

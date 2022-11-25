@@ -38,7 +38,7 @@ const Navbar = () => {
                     {!localStorage.getItem('token') ? <form className="d-flex">
                         <Link type="button" className="btn btn-dark mx-1" to='/login' role="button">Login</Link>
                         <Link type="button" className="btn btn-dark mx-1" to='/signup' role="button">Sign Up</Link>
-                    </form> : <button onClick={handleLogout} className='btn btn-dark'>Logout <i class="fa-solid fa-right-from-bracket"></i></button>}
+                    </form> : <button onClick={handleLogout} className='btn btn-dark'>Logout <i className="fa-solid fa-right-from-bracket"></i></button>}
                 </div>
             </div>
         </nav>

@@ -81,7 +81,7 @@ const MyNotes = (props) => {
 
 
             <div className="row container" id='user-notes'>
-                <h2 className='text-center'>Your Notes <i class="fa-solid fa-cloud"></i></h2>
+                <h2 className='text-center'>Your Notes <i className="fa-solid fa-cloud"></i></h2>
                 {notes.map((element) => {
                     return <NoteItem key={element._id} note={element} showAlert={showAlert} updateNote={updateNote} />
                 })}
