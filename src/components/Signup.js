@@ -10,8 +10,10 @@ const Signup = (props) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    props.setProgress(20)
     e.preventDefault();
     const { name, email, password } = credentials;
+    props.setProgress(50)
     const response = await fetch(`${host}/api/auth/createuser`, {
       method: 'POST',
       headers: {
@@ -19,6 +21,7 @@ const Signup = (props) => {
       },
       body: JSON.stringify({ name, email, password })
     });
+    props.setProgress(70)
 
     const json = await response.json();
     if (json.success) {
@@ -31,6 +34,7 @@ const Signup = (props) => {
     else {
       props.showAlert('Invalid Credentials', 'danger')
     }
+    props.setProgress(100)
   }
 
   const onChange = (e) => {

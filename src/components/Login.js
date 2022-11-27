@@ -11,6 +11,7 @@ const Login = (props) => {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
+        props.setProgress(30)
         e.preventDefault();
         const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
@@ -19,6 +20,7 @@ const Login = (props) => {
             },
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
+        props.setProgress(50)
         const json = await response.json();
         if (json.success) {
             //redirect and save auth token
@@ -30,6 +32,7 @@ const Login = (props) => {
         else {
             props.showAlert('Invalid Crredentials', 'danger')
         }
+        props.setProgress(100)
     }
 
     const onChange = (e) => {

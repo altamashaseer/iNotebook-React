@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const NoteState = (props) => {
   // const host = "http://localhost:5000"
-  const host = "https://puzzled-bull-stockings.cyclic.app"
+  const host = "https://puzzled-bull-stockings.cyclic.app" //backend published on cyclic
   const notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
 
